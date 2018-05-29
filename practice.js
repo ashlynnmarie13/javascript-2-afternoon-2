@@ -19,10 +19,9 @@ var arr = [10,20,30];
 
 //Code Here
 function first(arr) {
-  var firstValue = arr.slice(0,1);
-  console.log(firstValue)
+  return arr[0];
 };
-first(arr);
+
 
 
 ////////// PROBLEM 2 //////////
@@ -38,10 +37,8 @@ var arr = [40,50,60];
 
 //Code Here
 function last(arr){
- console.log(arr[arr.lenth-1])
+ return arr[arr.length-1];
 };
-last(arr);
-
 
 ////////// PROBLEM 3 //////////
 
@@ -76,11 +73,10 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 function reversedLooper(letters) {
-  for (let i=letters.length;i>=0;i--){
-    alert(family[i]);
+  for (let i=letters.length-1;i>=0;i--){
+    alert(letters[i]);
   }
 };
-reversedLooper(letters)
 
 
 
@@ -96,15 +92,18 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-var numsTwo = [];
+
 function evenFinder(nums){
+  let numsTwo = [];
   for (let i=0;i<nums.length;i++){
     if (nums[i]%2===0){
     numsTwo.push(nums[i]);
    }
-  } return numsTwo;
+  } 
+  return numsTwo;
 };
-console.log(numsTwo);
+
+
  
 
 
@@ -173,7 +172,22 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function removeItem(myGroceryList, item) {
+  if(myGroceryList && item) /*do these both exist*/{
+    if(myGroceryList.includes(item)){
+      for(let i=0; i < myGroceryList.length; i++) {
+        if(item===myGroceryList[i]){
+          myGroceryList.splice(i,1);
+          return myGroceryList;
+        }
+      } 
+    } else {
+      return myGroceryList;
+    }  
+  } else {
+    return [];
+  }
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -200,6 +214,17 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   
 //Code Here
 
+/*function addTen(numbers){
+  for(let i=0; i<numbers.length;i++)
+  numbers[i]=parseInt(numbers[i]);
+}
+numbers.forEach(function(value,i,arr) {
+numbers[i]=val+10;
+});
+console.log(numbers);
+return numbers;
+console.log(addTen(numbers));
+*/
 
 
 ////////// PROBLEM 11 //////////
